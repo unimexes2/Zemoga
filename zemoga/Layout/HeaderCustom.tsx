@@ -4,7 +4,7 @@ import GlobalContext from '../GlobalContext';
 import { useNavigation } from '@react-navigation/native';
 import styles from './Styles/MainStyles';
 export default function HeaderCustom() {
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
 
   const { GlobalFunctions, state } = React.useContext(GlobalContext);
   const onPressRefresh = () => {
@@ -22,6 +22,7 @@ export default function HeaderCustom() {
     });
 
     GlobalFunctions.userActionToState(deletedArray);
+    navigation.navigate('Main' as never);
   };
 
   return (

@@ -15,7 +15,9 @@ const HeartButton: React.FC<HeartButtonProps> = ({ id, isFavoriteProps }) => {
   const [isFavorite, setIsFavorite] = useState(isFavoriteProps);
 
   useEffect(() => {
-    setIsFavorite(state.userPostList[id].favorite);
+    if (state.userPostList[id]) {
+      setIsFavorite(state.userPostList[id].favorite);
+    }
   }, [state.userPostList]);
 
   const toggleFavorite = () => {

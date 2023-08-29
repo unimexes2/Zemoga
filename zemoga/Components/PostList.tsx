@@ -34,9 +34,15 @@ const PostList = () => {
       }}
       key={uuid.v4() + ''}
     >
-      <View style={styles.postContainer}>
-        <Text style={styles.postTitle}>{item.title}</Text>
-        <HeartButton id={item.id} isFavoriteProps={item.favorite} />
+      <View style={styles.postContainer} key={uuid.v4() + ''}>
+        <Text style={styles.postTitle} key={uuid.v4() + ''}>
+          {item.title}
+        </Text>
+        <HeartButton
+          id={item.id}
+          isFavoriteProps={item.favorite}
+          key={uuid.v4() + ''}
+        />
       </View>
     </Pressable>
   );
