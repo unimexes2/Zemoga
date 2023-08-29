@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   },
   heartImage: {
     margin: 'auto',
+    alignSelf:"center",
   },
   header: {
     flexDirection: 'row',
@@ -54,17 +55,22 @@ const styles = StyleSheet.create({
   },
   postContainer: {
     backgroundColor: '#F0F0F0',
-    padding: 12,
     marginBottom: 8,
     borderRadius: 8,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'baseline',
+    overflow:"hidden",
   },
   postTitle: {
     fontSize: 16,
-    margin: 20,
+    marginLeft:20,
+    marginTop:20,
+    maxWidth:250,
+    marginBottom:20,
+    display:'flex',
+    flexWrap:"wrap"
   },
   textBody: {
     fontSize: 15,
@@ -72,6 +78,12 @@ const styles = StyleSheet.create({
     marginTop: 50,
     alignSelf: 'center',
   },
+  postContainerHeart:{
+    alignSelf:"center",
+    marginRight:10,
+    marginLeft:10,
+padding:20,    
+  }
 });
 
 export default styles;

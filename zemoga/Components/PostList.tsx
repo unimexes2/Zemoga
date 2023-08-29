@@ -32,17 +32,19 @@ const PostList = () => {
         const route = { name: 'Details', params: { id: item.id } };
         navigation.navigate(route as never);
       }}
-      key={uuid.v4() + ''}
+      key={uuid.v4() + JSON.stringify(item.title)}
     >
-      <View style={styles.postContainer} key={uuid.v4() + ''}>
-        <Text style={styles.postTitle} key={uuid.v4() + ''}>
+      <View style={styles.postContainer} key={uuid.v4() + "1"}>
+        <Text style={styles.postTitle} key={uuid.v4() + '2'}>
           {item.title}
         </Text>
+        <View style={styles.postContainerHeart}>
         <HeartButton
           id={item.id}
           isFavoriteProps={item.favorite}
-          key={uuid.v4() + ''}
+          key={uuid.v4() + '3'}
         />
+        </View>
       </View>
     </Pressable>
   );
@@ -50,7 +52,7 @@ const PostList = () => {
   return (
     <FlatList
       data={arrState}
-      keyExtractor={(item) => item.id.toString()}
+      keyExtractor={(item) => item.id.toString()+uuid.v4()}
       renderItem={renderItem}
       contentContainerStyle={styles.containerList}
     />
