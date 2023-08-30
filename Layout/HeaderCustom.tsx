@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Pressable, View } from 'react-native';
+import {  Text, Pressable, View } from 'react-native';
 import GlobalContext from '../GlobalContext';
 import { useNavigation } from '@react-navigation/native';
 import styles from './Styles/MainStyles';

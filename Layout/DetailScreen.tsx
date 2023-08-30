@@ -9,7 +9,7 @@ const DetailsScreen = (data: any) => {
   const id: number = data.route.params.id;
 
   const { GlobalFunctions, state } = useContext(GlobalContext);
-  console.log('details', id, state.postList[id]);
+
   return (
     <Layout>
       <View style={styles.textDetails}>

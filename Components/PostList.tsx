@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, Text, FlatList, StyleSheet, Pressable } from 'react-native';
+import { View, Text, FlatList, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import HeartButton from './HeartButton';
 import styles from '../Layout/Styles/MainStyles';

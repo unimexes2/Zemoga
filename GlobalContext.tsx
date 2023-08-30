@@ -37,7 +37,7 @@ export function GlobalContextWrapper({ children }: Props) {
   const GlobalFunctions = useMemo(
     () => ({
       userActionToState: async (data: any[]) => {
-        console.log(data, 'global function');
+  
         try {
           await AsyncStorage.setItem('postList', JSON.stringify(data));
        
