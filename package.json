@@ -7,16 +7,15 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,html,css,scss,md}\"",
-    "test": "jest"
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,html,css,scss,md}\""
   },
   "jest": {
     "preset": "react-native"
   },
   "dependencies": {
+    "@expo/config-plugins": "^5.0.2",
     "@expo/webpack-config": "^0.17.2",
-    "@react-native-async-storage/async-storage": "^1.19.3",
-    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-async-storage/async-storage": "~1.17.3",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",

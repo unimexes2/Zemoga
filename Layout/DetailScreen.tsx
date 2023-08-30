@@ -1,10 +1,10 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import Layout from './Layout';
-import { useContext } from 'react';
-import GlobalContext from '../GlobalContext';
-import HeartButton from '../Components/HeartButton';
-import styles from './Styles/MainStyles';
+import React from "react";
+import { Text, View } from "react-native";
+import Layout from "./Layout";
+import { useContext } from "react";
+import GlobalContext from "../GlobalContext";
+import HeartButton from "../Components/HeartButton";
+import styles from "./Styles/MainStyles";
 const DetailsScreen = (data: any) => {
   const id: number = data.route.params.id;
 

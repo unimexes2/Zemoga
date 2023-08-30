@@ -74,3 +74,12 @@ typings/
 
 # FuseBox cache
 .fusebox/
+# expo
+.expo/
+#build
+web-build/
+# yarn
+*
+.lock
+
+

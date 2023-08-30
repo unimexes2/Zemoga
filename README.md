@@ -1,13 +1,16 @@
 # ZEMOGA
- test app
-## To access the web version of the application, use the following URL: 
+
+test app
+
+## To access the web version of the application, use the following URL:
 
 ## http://65.109.137.184:19006/.
 
 Note that the correct protocol is "http" not "https"
 
 ## To install the application,
- you need to have Node.js installed, preferably a version older than 16, and the package manager Yarn. You can find installation instructions for Yarn at https://classic.yarnpkg.com/lang/en/docs/install/ and for Node.js at https://nodejs.org/en/download.
+
+you need to have Node.js installed, preferably a version older than 16, and the package manager Yarn. You can find installation instructions for Yarn at https://classic.yarnpkg.com/lang/en/docs/install/ and for Node.js at https://nodejs.org/en/download.
 
 ## Once you have the prerequisites installed, follow these steps:
 
@@ -15,7 +18,7 @@ Create a folder to hold all the project files.
 Place all the project files in this folder.
 Open a command line interface in the "zemoga" folder.
 Run the command: yarn install. You might receive some warnings during the installation process; this is normal.
-The application was developed using Metro, which allows you to test it on both the web and Android platforms. 
+The application was developed using Metro, which allows you to test it on both the web and Android platforms.
 
 ## To run the app:
 

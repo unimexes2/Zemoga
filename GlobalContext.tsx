@@ -1,6 +1,6 @@
-import React, { ReactNode, useReducer, useMemo, createContext } from 'react';
-import fetchApi from './Api/fetchApi';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { ReactNode, useReducer, useMemo, createContext } from "react";
+import fetchApi from "./Api/fetchApi";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface Props {
   children?: ReactNode;
@@ -12,13 +12,13 @@ export function GlobalContextWrapper({ children }: Props) {
   const [state, dispatch] = useReducer(
     (prevState: any, action: any) => {
       switch (action.type) {
-        case 'DATA_GET_FROM_API':
+        case "DATA_GET_FROM_API":
           return {
             ...prevState,
             postList: action.postList,
             userPostList: action.postList,
           };
-        case 'USER_DATA_SET':
+        case "USER_DATA_SET":
           return {
             ...prevState,
             userPostList: action.userPostList,
@@ -37,35 +37,29 @@ export function GlobalContextWrapper({ children }: Props) {
   const GlobalFunctions = useMemo(
     () => ({
       userActionToState: async (data: any[]) => {
-  
         try {
-          await AsyncStorage.setItem('postList', JSON.stringify(data));
-       
+          await AsyncStorage.setItem("postList", JSON.stringify(data));
         } catch (error) {
-          console.error('Error storing data:', error);
+          console.error("Error storing data:", error);
         }
         dispatch({
-          type: 'USER_DATA_SET',
+          type: "USER_DATA_SET",
           userPostList: data,
         });
-
       },
-      initialStateLoad: async ()=>{
-
+      initialStateLoad: async () => {
         try {
-          const value = await AsyncStorage.getItem('postList');
+          const value = await AsyncStorage.getItem("postList");
           if (value !== null) {
             dispatch({
-              type: 'USER_DATA_SET',
+              type: "USER_DATA_SET",
               userPostList: JSON.parse(value),
             });
           }
         } catch (error) {
-          console.error('Error retrieving data:', error);
+          console.error("Error retrieving data:", error);
         }
-
       },
-
 
       globalFetchApi: async () => {
         var result: any[] = await fetchApi();
@@ -75,14 +69,13 @@ export function GlobalContextWrapper({ children }: Props) {
           element.id = index;
         });
         try {
-          await AsyncStorage.setItem('postList', JSON.stringify(result));
-       
+          await AsyncStorage.setItem("postList", JSON.stringify(result));
         } catch (error) {
-          console.error('Error storing data:', error);
+          console.error("Error storing data:", error);
         }
 
         dispatch({
-          type: 'DATA_GET_FROM_API',
+          type: "DATA_GET_FROM_API",
           postList: result,
         });
       },
