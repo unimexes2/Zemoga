@@ -79,7 +79,6 @@ typings/
 #build
 web-build/
 # yarn
-*
-.lock
 
+yarn.lock
 
