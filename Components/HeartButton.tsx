@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Pressable } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { Pressable, Text } from "react-native";
 import { useContext } from "react";
 import GlobalContext from "../GlobalContext";
+import styles from "../Layout/Styles/MainStyles";
 
 interface HeartButtonProps {
   id: number;
@@ -30,11 +30,9 @@ const HeartButton: React.FC<HeartButtonProps> = ({ id, isFavoriteProps }) => {
 
   return (
     <Pressable onPress={toggleFavorite}>
-      <Icon
-        name={isFavorite ? "heart" : "heart-o"}
-        size={30}
-        color={isFavorite ? "red" : "black"}
-      />
+      {!isFavorite ? <Text style={styles.heart} >🤍</Text>:<Text style={styles.heart} >❤️</Text>}
+      
+  
     </Pressable>
   );
 };

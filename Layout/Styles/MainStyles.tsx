@@ -93,6 +93,9 @@ const styles = StyleSheet.create({
     marginTop: 50,
     borderRadius: 7,
   },
+  heart:{
+    fontSize:40
+  }
 });
 
 export default styles;
