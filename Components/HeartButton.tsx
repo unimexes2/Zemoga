@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { TouchableOpacity } from "react-native";
+import { Pressable } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useContext } from "react";
 import GlobalContext from "../GlobalContext";
@@ -29,13 +29,13 @@ const HeartButton: React.FC<HeartButtonProps> = ({ id, isFavoriteProps }) => {
   };
 
   return (
-    <TouchableOpacity onPress={toggleFavorite}>
+    <Pressable onPress={toggleFavorite}>
       <Icon
         name={isFavorite ? "heart" : "heart-o"}
         size={30}
         color={isFavorite ? "red" : "black"}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

@@ -84,6 +84,15 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     padding: 20,
   },
+  buttonBack: {
+    maxWidth: 200,
+    margin: "auto",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    marginBottom: 0,
+    marginTop: 50,
+    borderRadius: 7,
+  },
 });
 
 export default styles;
