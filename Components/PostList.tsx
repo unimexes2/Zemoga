@@ -5,6 +5,8 @@ import HeartButton from "./HeartButton";
 import styles from "../Layout/Styles/MainStyles";
 import GlobalContext from "../GlobalContext";
 import uuid from "react-native-uuid";
+import { useNavigate } from "react-router-dom";
+import { Platform } from "react-native";
 interface Post {
   userId: number;
   id: number;
@@ -17,7 +19,7 @@ const PostList = () => {
   const { GlobalFunctions, state } = useContext(GlobalContext);
   const navigation = useNavigation();
   const [arrState, setArrstate] = useState(state.userPostList);
-
+  const navigateWeb = useNavigate(); 
   useEffect(() => {
     let arr: any = [];
     state.userPostList.map((val: any) => {
@@ -30,7 +32,8 @@ const PostList = () => {
     <Pressable
       onPress={() => {
         const route = { name: "Details", params: { id: item.id } };
-        navigation.navigate(route as never);
+        Platform.OS !== "web" ? navigation.navigate(route as never):navigateWeb("/Detail",params: { id: item.id })
+
       }}
       key={uuid.v4() + JSON.stringify(item.title)}
     >

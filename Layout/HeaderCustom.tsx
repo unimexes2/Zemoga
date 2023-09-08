@@ -2,15 +2,21 @@ import React from "react";
 import { Text, Pressable, View } from "react-native";
 import GlobalContext from "../GlobalContext";
 import { useNavigation } from "@react-navigation/native";
+import { useNavigate } from "react-router-dom";
 import styles from "./Styles/MainStyles";
-export default function HeaderCustom() {
-  const navigation = useNavigation();
+import { Platform } from "react-native";
 
-  const { GlobalFunctions, state } = React.useContext(GlobalContext);
-  const onPressRefresh = () => {
-    GlobalFunctions.globalFetchApi();
-    navigation.navigate("Main" as never);
+
+export default function HeaderCustom() {
+ const navigation = useNavigation();
+ const navigateWeb = useNavigate();
+ const { GlobalFunctions, state } = React.useContext(GlobalContext);
+ const onPressRefresh = () => {
+
+GlobalFunctions.globalFetchApi();
+Platform.OS !== "web" ?  navigation.navigate("Main" as never):navigateWeb("/")
   };
+  
   const onPressDelete = () => {
     let id: number = 0;
     let deletedArray = state.userPostList.filter((el: any) => {

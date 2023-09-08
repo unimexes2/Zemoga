@@ -1,9 +1,12 @@
 import { GlobalContextWrapper } from "./GlobalContext";
-import Routes from "./Routes";
+import RoutesMobile from "./Routes/RoutesMobile";
+import RoutesWeb from "./Routes/RoutesWeb";
+import { Platform } from "react-native";
 export default function App() {
   return (
     <GlobalContextWrapper>
-      <Routes />
+      {Platform.OS !== "web" ?
+      <RoutesMobile />:<RoutesWeb/>}
     </GlobalContextWrapper>
   );
 }
